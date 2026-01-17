@@ -1,0 +1,16 @@
+streamlit
+pandas
+langgraph
+langchain
+langchain-community
+langchain-openai
+langchain-groq
+google-api-python-client
+google-auth-oauthlib
+google-auth-httplib2
+tavily-python
+groq
+openpyxl
+python-dotenv
+duckduckgo-search
+feedparser
