@@ -214,14 +214,28 @@ def main():
     
     st.sidebar.divider()
     
-    # API CONFIG (Env fallback)
+    # API CONFIG (Streamlit Secrets → Env → User Input)
     with st.sidebar.expander("⚙️ API Configuration"):
+        # Try to get from Streamlit secrets first, then env vars
+        default_openrouter = ""
+        default_tavily = ""
+        
+        try:
+            default_openrouter = st.secrets.get("OPENROUTER_API_KEY", "")
+            default_tavily = st.secrets.get("TAVILY_API_KEY", "")
+        except:
+            # Fallback to environment variables
+            default_openrouter = os.getenv("OPENROUTER_API_KEY", "")
+            default_tavily = os.getenv("TAVILY_API_KEY", "")
+        
         openrouter_key = st.text_input("OpenRouter API Key", 
-                                      value=os.getenv("OPENROUTER_API_KEY", ""), 
-                                      type="password")
+                                      value=default_openrouter, 
+                                      type="password",
+                                      help="Get your key from openrouter.ai")
         tavily_key = st.text_input("Tavily API Key", 
-                                   value=os.getenv("TAVILY_API_KEY", ""), 
-                                   type="password")
+                                   value=default_tavily, 
+                                   type="password",
+                                   help="Get your key from tavily.com")
 
     if st.session_state.page == "Home":
         show_home(is_pro, trial_uses)
