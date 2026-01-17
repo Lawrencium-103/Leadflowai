@@ -579,10 +579,5 @@ def show_app(openrouter_api_key, tavily_api_key, is_pro):
             - ✅ **Reply-First**: Whitelisting strategy.
             """)
 
-    # Main Sending Loop Area modification
-    if is_pro or trial_uses < 3: # Check logic again to be safe
-         # ... (inside the execution loop) ...
-         pass
-
 if __name__ == "__main__":
     main()
