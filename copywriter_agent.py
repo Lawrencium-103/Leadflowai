@@ -40,7 +40,7 @@ def generate_email_content(lead_row: dict, openrouter_api_key: str = None, user_
     1. Recognition: Sharp observation about {domain} or a specific trigger.
     2. Value/Win: Offer a specific insight related to your role as an AI developer.
     3. Proposal: Reframed logic: "If [Trigger] then [Pain]... I built [Solution] for [Outcome]."
-    4. CTA: Low-pressure "No-oriented" question.
+    4. CTA (REPLY-FIRST): Ask a very simple, low-pressure "No-oriented" question that is easy to reply to (e.g., "Is this completely irrelevant to your priorities right now?" or "Would it be a waste of time to explore this?"). Getting a reply is our #1 priority for sender reputation.
 
     Format your response EXACTLY as follows:
     [SUBJECT]: ...
